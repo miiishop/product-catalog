@@ -1,4 +1,4 @@
-const IMG = "asset/";
+const IMG = "asset/optimized/";
 
 const DEFAULT_ZIPPER_COLORS = ["White", "Rice white", "Beige", "Brown", "Pink", "Red"];
 const DEFAULT_LINING_COLORS = ["Brown", "Champagne", "Rust Orange", "Pink", "Sky blue", "Maroon", "Brown", "Dark Peach", "Red", "Light pink"];
