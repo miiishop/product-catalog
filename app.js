@@ -158,7 +158,7 @@ const PRODUCTS = PRODUCT_PHOTO_SETS.map(({ name, files, ...options }) => ({
   details: options.details || ["Approx. 3.5 × 4.5 inches"]
 }));
 
-const GALLERY = PRODUCT_PHOTO_SETS.map(({ files }) => files[0]);
+const PRODUCTS_PER_PAGE = 8;
 
 const $ = (sel) => document.querySelector(sel);
 let activeFilter = "all";
@@ -166,6 +166,7 @@ let activeFilterEmptyMessage = "";
 let activeFilterDescription = "";
 let activeFilterFeatures = [];
 let activeFilterPrice = "";
+let visibleProductCount = PRODUCTS_PER_PAGE;
 let activeProduct = null;
 let activeProductImages = [];
 let activeImageIndex = 0;
@@ -224,19 +225,27 @@ function renderProducts() {
     return;
   }
 
-  const productCards = list.map((p) => {
+  const productCards = list.slice(0, visibleProductCount).map((p) => {
     const card = document.createElement("article");
     card.className = "card";
 
     const media = document.createElement("button");
     media.className = "card-media";
     media.setAttribute("aria-label", "View " + p.name);
+    media.classList.add("is-loading");
+    media.setAttribute("aria-busy", "true");
     media.addEventListener("click", () => openProduct(p.id));
 
     const img = document.createElement("img");
-    img.src = p.image;
     img.alt = p.name;
     img.loading = "lazy";
+    const finishLoading = () => {
+      media.classList.remove("is-loading");
+      media.setAttribute("aria-busy", "false");
+    };
+    img.addEventListener("load", finishLoading, { once: true });
+    img.addEventListener("error", finishLoading, { once: true });
+    img.src = p.image;
     media.append(img);
 
     if (p.soldOut) {
@@ -315,19 +324,18 @@ function renderProducts() {
     ...content
   );
 
-}
-
-function renderGallery() {
-  const grid = $("#galleryGrid");
-  grid.replaceChildren(
-    ...GALLERY.map((file) => {
-      const img = document.createElement("img");
-      img.src = IMG + file;
-      img.alt = "MIIISHOP handmade everyday pouch and wallet";
-      img.loading = "lazy";
-      return img;
-    })
-  );
+  if (visibleProductCount < list.length) {
+    const seeMore = document.createElement("button");
+    seeMore.type = "button";
+    seeMore.className = "btn btn-ghost see-more";
+    seeMore.textContent = "See more";
+    seeMore.addEventListener("click", () => {
+      visibleProductCount = Math.min(visibleProductCount + PRODUCTS_PER_PAGE, list.length);
+      renderProducts();
+      $(".card:last-of-type .card-media")?.focus();
+    });
+    grid.append(seeMore);
+  }
 }
 
 function openProduct(id) {
@@ -445,6 +453,7 @@ $("#filters").addEventListener("click", (e) => {
   activeFilterDescription = chip.dataset.description || "";
   activeFilterFeatures = chip.dataset.features ? chip.dataset.features.split("|") : [];
   activeFilterPrice = chip.dataset.price || "";
+  visibleProductCount = PRODUCTS_PER_PAGE;
   document.querySelectorAll(".chip").forEach((c) =>
     c.classList.toggle("is-active", c === chip)
   );
@@ -453,4 +462,3 @@ $("#filters").addEventListener("click", (e) => {
 
 $("#year").textContent = new Date().getFullYear();
 renderProducts();
-renderGallery();
