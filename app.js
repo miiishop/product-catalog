@@ -410,6 +410,33 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeProductModal();
 });
 
+const mobileNavLinks = [...document.querySelectorAll(".mobile-nav a")];
+const mobileNavSections = mobileNavLinks
+  .map((link) => document.querySelector(link.hash))
+  .filter(Boolean);
+
+function updateMobileNav() {
+  const viewportCenter = window.innerHeight / 2;
+  const activeSection = mobileNavSections.find((section) => {
+    const bounds = section.getBoundingClientRect();
+    return bounds.top <= viewportCenter && bounds.bottom > viewportCenter;
+  });
+
+  mobileNavLinks.forEach((link) => {
+    if (activeSection && link.hash === `#${activeSection.id}`) {
+      link.setAttribute("aria-current", "location");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+}
+
+const mobileNavObserver = new IntersectionObserver(updateMobileNav, {
+  rootMargin: "-49% 0px -49% 0px"
+});
+mobileNavSections.forEach((section) => mobileNavObserver.observe(section));
+updateMobileNav();
+
 $("#filters").addEventListener("click", (e) => {
   const chip = e.target.closest(".chip");
   if (!chip) return;
