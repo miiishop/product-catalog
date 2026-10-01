@@ -15,20 +15,22 @@ const PRODUCT_PHOTO_SETS = [
     name: "BEA",
     files: ["BEA.png", "BEA2.png", "BEA3.png"],
     note: "Bunny garden on cream",
-    liningColors: ["Brown"],
+    zipperColors: ["Rice white", "Red"],
+    liningColors: ["Rust Orange", "Maroon"],
   },
   {
     name: "BERRY",
     files: ["BERRY.png", "BERRY2.png", "BERRY3.png"],
     note: "Pink classic strawberry",
     zipperColors: ["Red", "Pink"],
-    liningColors: ["Red"]
+    liningColors: ["Maroon", "Pink"]
   },
   {
     name: "CHERRIE",
     files: ["CHERRIE.png", "CHERRIE2.png", "CHERRIE3.png"],
     note: "Big cherry on cream",
-    liningColors: ["Brown"]
+    zipperColors: ["Red", "Beige"],
+    liningColors: ["Red"]
   },
   {
     name: "CLEO",
@@ -170,6 +172,7 @@ let visibleProductCount = PRODUCTS_PER_PAGE;
 let activeProduct = null;
 let activeProductImages = [];
 let activeImageIndex = 0;
+let productImageLoadId = 0;
 
 function getCategoryLabel(category) {
   if (category === "wallet") return "Mini wallet";
@@ -372,8 +375,23 @@ function updateProductCarousel() {
   const next = $("#pmImageNext");
   const indicators = $("#pmImageIndicators");
   const imageCount = activeProductImages.length;
+  const media = image.closest(".pm-media");
+  const imageLoadId = ++productImageLoadId;
+  const imageSource = activeProductImages[activeImageIndex];
 
-  image.src = activeProductImages[activeImageIndex];
+  media.classList.add("is-loading");
+  media.setAttribute("aria-busy", "true");
+  const finishLoading = () => {
+    if (imageLoadId !== productImageLoadId) return;
+    media.classList.remove("is-loading");
+    media.setAttribute("aria-busy", "false");
+    image.onload = null;
+    image.onerror = null;
+  };
+  image.onload = finishLoading;
+  image.onerror = finishLoading;
+  image.src = imageSource;
+  if (image.complete) finishLoading();
   image.alt = imageCount > 1
     ? `${activeProduct.name}, photo ${activeImageIndex + 1} of ${imageCount}`
     : activeProduct.name;
