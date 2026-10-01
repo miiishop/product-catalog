@@ -1,5 +1,6 @@
 const IMG = "asset/optimized/";
 
+const DEFAULT_WALLET_SIZE = "Approx. 3.5 x 4.5 inches (Height x Width)";
 const DEFAULT_ZIPPER_COLORS = ["White", "Rice white", "Beige", "Brown", "Pink", "Red"];
 const DEFAULT_LINING_COLORS = ["Brown", "Champagne", "Rust Orange", "Pink", "Sky blue", "Maroon", "Brown", "Dark Peach", "Red", "Light pink"];
 
@@ -58,9 +59,9 @@ const PRODUCT_PHOTO_SETS = [
     name: "LILY",
     files: ["LILY.png", "LILY2.png", "LILY3.png"],
     category: "everyday-pouch",
-    note: "Handmade everyday pouch",
-    zipperColors: ["Red"],
-    liningColors: ["Red"]
+    note: "Espresso pink polka dot",
+    liningColors: ["Brown"],
+    
   },
   {
     name: "LUNA",
@@ -108,17 +109,15 @@ const PRODUCT_PHOTO_SETS = [
     name: "SOPHIE",
     files: ["SOPHIE.png", "SOPHIE2.png", "SOPHIE3.png"],
     category: "everyday-pouch",
-    note: "Handmade everyday pouch",
-    zipperColors: ["Red"],
-    liningColors: ["Red"]
+    note: "Periwinkle white polka dot",
+    liningColors: ["Pink"]
   },
   {
     name: "STACEY",
     files: ["STACEY.png", "STACEY2.png", "STACEY3.png"],
     category: "everyday-pouch",
-    note: "Handmade everyday pouch",
-    zipperColors: ["Red"],
-    liningColors: ["Red"]
+    note: "Lavender starry dot",
+    liningColors: ["Pink"]
   },
   {
     name: "WINNIE",
@@ -133,7 +132,7 @@ const PRODUCT_PHOTO_SETS = [
     note: "Corduroy",
     zipperColors: ["Brown"],
     liningColors: ["Brown"],
-    details: ["Approx. 3.5 × 4.5 inches", "Suitable for all genders"]
+    details: [DEFAULT_WALLET_SIZE, "Suitable for all genders"]
   },
   {
     name: "BLACK",
@@ -141,7 +140,7 @@ const PRODUCT_PHOTO_SETS = [
     note: "Corduroy",
     zipperColors: ["Black"],
     liningColors: ["Black"],
-    details: ["Approx. 3.5 × 4.5 inches", "Suitable for all genders"]
+    details: [DEFAULT_WALLET_SIZE, "Suitable for all genders"]
   }
 ];
 
@@ -154,10 +153,12 @@ const PRODUCTS = PRODUCT_PHOTO_SETS.map(({ name, files, ...options }) => ({
     ...files.map((file) => IMG + file),
     ...((options.category || "wallet") === "wallet" ? [IMG + "WRISTLETS.png"] : [])
   ],
-  note: options.note || "Handmade mini wallet",
+  note: options.note || "Handmade Mini wallet",
   zipperColors: options.zipperColors || [...DEFAULT_ZIPPER_COLORS],
   liningColors: options.liningColors || [...DEFAULT_LINING_COLORS],
-  details: options.details || ["Approx. 3.5 × 4.5 inches"]
+  details: options.details || (options.category === "everyday-pouch"
+    ? ["Approx. 4.5 x 4 x 7 inches (Height x Width x Length)", "Cream nylon zipper tape with gold details", "Gold metal zipper pull"]
+    : [DEFAULT_WALLET_SIZE])
 }));
 
 const PRODUCTS_PER_PAGE = 8;
@@ -300,7 +301,7 @@ function renderProducts() {
   if (activeFilterFeatures.length) {
     const features = document.createElement("ul");
     features.className = "filter-features";
-    features.setAttribute("aria-label", "Mini wallet features");
+    features.setAttribute("aria-label", `${getCategoryLabel(activeFilter)} features`);
     activeFilterFeatures.forEach((feature) => {
       const item = document.createElement("li");
       item.textContent = feature;
@@ -360,10 +361,17 @@ function openProduct(id) {
       ]
     : p.details;
   $("#pmMeta").innerHTML = details.map((item) => `<li>${item}</li>`).join("");
-  $("#pmOptions").hidden = p.category !== "wallet";
+  const isWallet = p.category === "wallet";
+  const hasColorOptions = isWallet || p.category === "everyday-pouch";
+  $("#pmOptions").hidden = !hasColorOptions;
+  $("#pmOptions").setAttribute("aria-label", isWallet
+    ? "Zipper, lining, and wristlet color options"
+    : "Lining color options");
   renderColorSwatches("#pmZipperColors", p.zipperColors);
   renderColorSwatches("#pmLiningColors", p.liningColors);
-  $("#pmNote").hidden = p.category !== "wallet";
+  $("#pmZipperColors").closest(".color-group").hidden = !isWallet;
+  $("#wristletColorsTitle").closest(".color-group").hidden = !isWallet;
+  $("#pmNote").hidden = !hasColorOptions;
 
   $("#productModal").hidden = false;
   document.body.style.overflow = "hidden";
@@ -462,6 +470,7 @@ const mobileNavObserver = new IntersectionObserver(updateMobileNav, {
 });
 mobileNavSections.forEach((section) => mobileNavObserver.observe(section));
 updateMobileNav();
+window.addEventListener("hashchange", updateMobileNav);
 
 $("#filters").addEventListener("click", (e) => {
   const chip = e.target.closest(".chip");
