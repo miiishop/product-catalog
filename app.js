@@ -1,4 +1,4 @@
-const IMG = "asset/optimized/";
+const IMG = "asset/";
 
 const DEFAULT_WALLET_SIZE = "Approx. 3.5 x 4.5 inches (Height x Width)";
 const DEFAULT_ZIPPER_COLORS = ["White", "Rice white", "Beige", "Brown", "Pink", "Red"];
@@ -78,6 +78,110 @@ const PRODUCT_PHOTO_SETS = [
     liningColors: ["Rust Orange"]
   },
   {
+    name: "DAISY",
+    files: ["CH.DAISY2.png", "CH.DAISY.png"],
+    category: "cable-holder",
+    note: "Lilac floral patchwork",
+    snapButtonColors: ["Purple"],
+    liningColors: ["Light pink"],
+    // image: "asset/DAISY.png",
+    // images: ["asset/DAISY.png"],
+    details: ["Approx. 4.5 x 1.5 inches (Height x Width)", "Folded: 2.5 x 1.5 inches (Height x Width)"]
+  },
+  {
+    name: "CELESTE",
+    files: ["CH.CELESTE.png", "CH.CELESTE2.png"],
+    category: "cable-holder",
+    note: "Blue ribbon",
+    snapButtonColors: ["White"],
+    liningColors: ["Sky blue"],
+    details: ["Approx. 4.5 x 1.5 inches (Height x Width)", "Folded: 2.5 x 1.5 inches (Height x Width)"]
+  },
+  {
+    name: "CLARA",
+    files: ["CH.CLARA.png", "CH.CLARA2.png"],
+    category: "cable-holder",
+    note: "Pastel floral patchwork",
+    snapButtonColors: ["White"],
+    liningColors: ["Pink polka dot"],
+    details: ["Approx. 4.5 x 1.5 inches (Height x Width)", "Folded: 2.5 x 1.5 inches (Height x Width)"]
+  },
+  {
+    name: "LILY",
+    id: "cable-holder-lily",
+    files: ["CH.LILY.png", "CH.LILY2.png"],
+    category: "cable-holder",
+    note: "Espresso pink polka dot",
+    snapButtonColors: ["Pale pink"],
+    liningColors: ["Pale pink brown polka dot"],
+    details: ["Approx. 4.5 x 1.5 inches (Height x Width)", "Folded: 2.5 x 1.5 inches (Height x Width)"]
+  },
+  {
+    name: "LOTTIE",
+    files: ["CH.LOTTIE.png", "CH.LOTTIE2.png"],
+    category: "cable-holder",
+    note: "Ditsy floral stripe",
+    snapButtonColors: ["Ivory"],
+    liningColors: ["Light pink"],
+    details: ["Approx. 4.5 x 1.5 inches (Height x Width)", "Folded: 2.5 x 1.5 inches (Height x Width)"]
+  },
+  {
+    name: "LOVELY",
+    files: ["CH.LOVELY.png", "CH.LOVELY2.png"],
+    category: "cable-holder",
+    note: "Blue daisy and tulip patch",
+    snapButtonColors: ["White"],
+    liningColors: ["Sky blue"],
+    details: ["Approx. 4.5 x 1.5 inches (Height x Width)", "Folded: 2.5 x 1.5 inches (Height x Width)"]
+  },
+  {
+    name: "LUNA",
+    id: "cable-holder-luna",
+    files: ["CH.LUNA.png", "CH.LUNA2.png"],
+    category: "cable-holder",
+    note: "Butter yellow strawberry",
+    snapButtonColors: ["Dark pink"],
+    liningColors: ["Light pink"],
+    details: ["Approx. 4.5 x 1.5 inches (Height x Width)", "Folded: 2.5 x 1.5 inches (Height x Width)"]
+  },
+  {
+    name: "MARY",
+    files: ["CH.MARY.png", "CH.MARY2.png"],
+    category: "cable-holder",
+    note: "Blush brown polka dot",
+    snapButtonColors: ["Pale pink"],
+    liningColors: ["Brown pink polka dot"],
+    details: ["Approx. 4.5 x 1.5 inches (Height x Width)", "Folded: 2.5 x 1.5 inches (Height x Width)"]
+  },
+  {
+    name: "MYRA",
+    files: ["CH.MYRA.png", "CH.MYRA2.png"],
+    category: "cable-holder",
+    note: "White floral print",
+    snapButtonColors: ["Light pink"],
+    liningColors: ["Sky blue"],
+    details: ["Approx. 4.5 x 1.5 inches (Height x Width)", "Folded: 2.5 x 1.5 inches (Height x Width)"]
+  },
+  {
+    name: "ROSE",
+    files: ["CH.ROSE.png", "CH.ROSE2.png"],
+    category: "cable-holder",
+    note: "Soft rose white polka dot",
+    snapButtonColors: ["Peach"],
+    liningColors: ["Pink gingham"],
+    details: ["Approx. 4.5 x 1.5 inches (Height x Width)", "Folded: 2.5 x 1.5 inches (Height x Width)"]
+  },
+  {
+    name: "SOPHIE",
+    id: "cable-holder-sophie",
+    files: ["CH.SOPHIE.png", "CH.SOPHIE2.png"],
+    category: "cable-holder",
+    note: "Periwinkle white polka dot",
+    snapButtonColors: ["Pale pink"],
+    liningColors: ["Sky blue"],
+    details: ["Approx. 4.5 x 1.5 inches (Height x Width)", "Folded: 2.5 x 1.5 inches (Height x Width)"]
+  },
+  {
     name: "MIA",
     files: ["MIA.png", "MIA2.png", "MIA3.png"],
     note: "White mini cherry orange",
@@ -145,16 +249,17 @@ const PRODUCT_PHOTO_SETS = [
 ];
 
 const PRODUCTS = PRODUCT_PHOTO_SETS.map(({ name, files, ...options }) => ({
-  id: name.toLowerCase(),
+  id: options.id || name.toLowerCase(),
   name,
   category: options.category || "wallet",
-  image: IMG + files[0],
-  images: [
+  image: options.image || IMG + files[0],
+  images: options.images || [
     ...files.map((file) => IMG + file),
     ...((options.category || "wallet") === "wallet" ? [IMG + "WRISTLETS.png"] : [])
   ],
   note: options.note || "Handmade Mini wallet",
   zipperColors: options.zipperColors || [...DEFAULT_ZIPPER_COLORS],
+  snapButtonColors: options.snapButtonColors || [],
   liningColors: options.liningColors || [...DEFAULT_LINING_COLORS],
   details: options.details || (options.category === "everyday-pouch"
     ? ["Approx. 4.5 x 4 x 7 inches (Height x Width x Length)", "Cream nylon zipper tape with gold details", "Gold metal zipper pull"]
@@ -252,11 +357,21 @@ function renderProducts() {
     img.src = p.image;
     media.append(img);
 
-    if (p.soldOut) {
-      const status = document.createElement("span");
-      status.className = "badge sold-out-badge";
-      status.textContent = "Sold out";
-      media.append(status);
+    const badges = [];
+    if (p.soldOut) badges.push({ label: "Sold out", className: "sold-out-badge" });
+    if (p.category === "cable-holder") {
+      badges.push({ label: "Only 1 available" });
+    }
+    if (badges.length) {
+      const badgeGroup = document.createElement("div");
+      badgeGroup.className = "card-badges";
+      badges.forEach(({ label, className = "" }) => {
+        const badge = document.createElement("span");
+        badge.className = `badge ${className}`.trim();
+        badge.textContent = label;
+        badgeGroup.append(badge);
+      });
+      media.append(badgeGroup);
     }
 
     const body = document.createElement("div");
@@ -274,6 +389,10 @@ function renderProducts() {
     note.className = "card-note";
     note.textContent = p.note;
 
+    const accentNote = document.createElement("span");
+    accentNote.className = "card-note-badge";
+    accentNote.textContent = p.category === "cable-holder" ? "Contrasting fabric lining" : "";
+
     const foot = document.createElement("div");
     foot.className = "card-foot";
 
@@ -286,7 +405,9 @@ function renderProducts() {
     });
 
     foot.append(view);
-    body.append(cat, title, note, foot);
+    body.append(cat, title, note);
+    if (p.category === "cable-holder") body.append(accentNote);
+    body.append(foot);
     card.append(media, body);
     return card;
   });
@@ -353,7 +474,8 @@ function openProduct(id) {
   $("#pmCat").textContent = getCategoryLabel(p.category);
   $("#pmTitle").textContent = p.name;
   $("#pmSoldOut").hidden = !p.soldOut;
-  $("#pmDesc").textContent = p.desc;
+  $("#pmDesc").textContent = p.desc || "";
+  $("#pmDesc").hidden = !p.desc && p.category === "cable-holder";
   const details = p.category === "wallet"
     ? [
         ...p.details.filter((item) => item.startsWith("Approx.") || item === "Suitable for all genders"),
@@ -362,16 +484,24 @@ function openProduct(id) {
     : p.details;
   $("#pmMeta").innerHTML = details.map((item) => `<li>${item}</li>`).join("");
   const isWallet = p.category === "wallet";
-  const hasColorOptions = isWallet || p.category === "everyday-pouch";
+  const isCableHolder = p.category === "cable-holder";
+  const hasColorOptions = isWallet || p.category === "everyday-pouch" || isCableHolder;
   $("#pmOptions").hidden = !hasColorOptions;
   $("#pmOptions").setAttribute("aria-label", isWallet
     ? "Zipper, lining, and wristlet color options"
-    : "Lining color options");
+    : isCableHolder
+      ? "Snap button and lining colors"
+      : "Lining color options");
   renderColorSwatches("#pmZipperColors", p.zipperColors);
+  renderColorSwatches("#pmSnapButtonColors", p.snapButtonColors);
   renderColorSwatches("#pmLiningColors", p.liningColors);
   $("#pmZipperColors").closest(".color-group").hidden = !isWallet;
+  $("#pmSnapButtonColors").closest(".color-group").hidden = !isCableHolder;
   $("#wristletColorsTitle").closest(".color-group").hidden = !isWallet;
-  $("#pmNote").hidden = !hasColorOptions;
+  $("#pmNote").textContent = p.category === "cable-holder"
+    ? "Please note: Since each piece is handmade, slight variations in size, shape, and placement may occur. Colors may also appear different depending on your monitor or screen settings."
+    : "Please note: Colors may vary slightly depending on your screen or monitor.";
+  $("#pmNote").hidden = !hasColorOptions && p.category !== "cable-holder";
 
   $("#productModal").hidden = false;
   document.body.style.overflow = "hidden";

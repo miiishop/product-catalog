@@ -427,13 +427,22 @@ section[id] { scroll-margin-top: 90px; }
   .card-media.is-loading::after,
   .pm-media.is-loading::after { animation: none; }
 }
-.badge {
+.card-badges {
   position: absolute;
   top: .7rem;
   left: .7rem;
+  right: .7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  pointer-events: none;
+}
+.badge {
+  position: static;
   background: var(--butter);
   border-radius: 999px;
   padding: .22rem .7rem;
+  max-width: 100%;
   font-size: .68rem;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -472,6 +481,22 @@ section[id] { scroll-margin-top: 90px; }
 }
 .card-title { font-size: 1.02rem; font-weight: 700; margin: 0; }
 .card-note { font-size: .84rem; color: var(--muted); margin: 0; }
+.card-note-badge {
+  display: inline-block;
+  width: fit-content;
+  margin-top: .15rem;
+  padding: .3rem .7rem;
+  border-radius: 999px;
+  background: #dfeefc;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  font-size: .62rem;
+  line-height: 1.3;
+  border: 1px solid rgba(25, 47, 109, 0.12);
+  box-shadow: 0 2px 0 rgba(25, 47, 109, 0.08);
+}
 .card-foot {
   display: flex;
   align-items: center;
@@ -691,16 +716,46 @@ section[id] { scroll-margin-top: 90px; }
   border-radius: 50%;
 }
 .swatch-white { background: #fff; }
+.swatch-ivory { background: #fffff0; }
+.swatch-white-polka-dot {
+  background-color: #fff;
+  background-image: radial-gradient(#ed9bb4 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.swatch-pink-polka-dot {
+  background-color: #ed9bb4;
+  background-image: radial-gradient(#fff 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.swatch-pale-pink-brown-polka-dot {
+  background-color: #f5c6d4;
+  background-image: radial-gradient(#79543a 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.swatch-pink-gingham {
+  background-color: #fff;
+  background-image: repeating-conic-gradient(#ed9bb4 0% 25%, #fff 0% 50%);
+  background-size: 4px 4px;
+}
+.swatch-brown-pink-polka-dot {
+  background-color: #79543a;
+  background-image: radial-gradient(#f5c6d4 1px, transparent 1px);
+  background-size: 4px 4px;
+}
 .swatch-rice-white { background: #f5f3e8; }
 .swatch-cream { background: #f4ead6; }
 .swatch-beige { background: #d4b896; }
 .swatch-brown { background: #79543a; }
 .swatch-pink { background: #ed9bb4; }
+.swatch-peach { background: #f2a18c; }
 .swatch-rust-orange { background: #c65d32; }
 .swatch-sky-blue { background: #78b9dc; }
 .swatch-maroon { background: #70283b; }
 .swatch-dark-peach { background: #e69a78; }
+.swatch-lilac { background: #c4a4de; }
 .swatch-light-pink { background: #f5c6d4; }
+.swatch-pale-pink { background: #f5c6d4; }
+.swatch-dark-pink { background: #f1266d; }
 .swatch-red { background: #bd3546; }
 .swatch-champagne { background: #e7d5a8; }
 .swatch-orange { background: #ed8a32; }
