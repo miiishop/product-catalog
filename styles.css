@@ -737,6 +737,11 @@ section[id] { scroll-margin-top: 90px; }
   background-image: repeating-conic-gradient(#ed9bb4 0% 25%, #fff 0% 50%);
   background-size: 4px 4px;
 }
+.swatch-yellow-gingham {
+  background-color: #fff9e6;
+  background-image: repeating-conic-gradient(#e5c15b 0% 25%, #fff9e6 0% 50%);
+  background-size: 4px 4px;
+}
 .swatch-brown-pink-polka-dot {
   background-color: #79543a;
   background-image: radial-gradient(#f5c6d4 1px, transparent 1px);
@@ -759,6 +764,19 @@ section[id] { scroll-margin-top: 90px; }
 .swatch-red { background: #bd3546; }
 .swatch-champagne { background: #e7d5a8; }
 .swatch-orange { background: #ed8a32; }
+.swatch-pale-orange { background: #f4b183; }
+.swatch-avocado { background: #a8c96f; }
+.swatch-maize-yellow { background: #f2c84b; }
+.swatch-old-rose { background: #c08081; }
+.swatch-taro { background: #8068a8; }
+.swatch-blue-cotton-candy { background: #a7d8f0; }
+.swatch-baby-blue { background: #89cff0; }
+.swatch-aqua-blue { background: #7fdbd4; }
+.swatch-flamingo { background: #f08080; }
+.swatch-canary-yellow { background: #d6aa45; }
+.swatch-dark-sage-green { background: #556b5d; }
+.swatch-sage-green { background: #788b78; }
+.swatch-rose-gold { background: #b76e79; }
 .swatch-yellow { background: #f2cf4a; }
 .swatch-green { background: #43845d; }
 .swatch-blue { background: #3c78b5; }

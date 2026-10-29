@@ -1,8 +1,8 @@
 const IMG = "asset/";
 
 const DEFAULT_WALLET_SIZE = "Approx. 3.5 x 4.5 inches (Height x Width)";
-const DEFAULT_ZIPPER_COLORS = ["White", "Rice white", "Beige", "Brown", "Pink", "Red"];
-const DEFAULT_LINING_COLORS = ["Brown", "Champagne", "Rust Orange", "Pink", "Sky blue", "Maroon", "Brown", "Dark Peach", "Red", "Light pink"];
+const DEFAULT_ZIPPER_COLORS = ["White", "Rice white", "Cream", "Beige", "Brown", "Pink", "Red"];
+const DEFAULT_LINING_COLORS = ["Brown", "Champagne", "Rust Orange", "Pink", "Sky blue", "Maroon", "Brown", "Dark Peach", "Red", "Light pink", "Pale Orange", "Avocado", "Maize Yellow", "Old Rose", "taro", "Blue Cotton Candy", "Baby Blue", "Aqua Blue", "Flamingo", "Canary Yellow", "Dark Sage Green", "Peach", "Red", "Orange", "Lilac", "Sage Green", "Rose Gold"];
 
 const PRODUCT_PHOTO_SETS = [
   {
@@ -224,6 +224,175 @@ const PRODUCT_PHOTO_SETS = [
     liningColors: ["Pink"]
   },
   {
+    name: "BROWN ver2",
+    id: "everyday-pouch-brown-ver2",
+    files: ["EP.1BROWN.jpg", "EP.1BROWN2.jpg", "EP.1BROWN3.jpg", "EP.1BROWN4.jpg"],
+    category: "everyday-pouch",
+    note: "Corduroy",
+    zipperColors: ["Cream"],
+    liningColors: ["Yellow Gingham"]
+  },
+  {
+    name: "AMBER",
+    id: "everyday-pouch-amber",
+    files: ["EP.AMBER.jpg", "EP.AMBER2.jpg", "EP.AMBER3.jpg", "EP.AMBER4.jpg"],
+    category: "everyday-pouch",
+    note: "Yellow and orange strawberry",
+    liningColors: ["Orange"]
+  },
+  {
+    name: "BROWN",
+    id: "everyday-pouch-brown",
+    files: ["EP.BROWN2.jpg", "EP.BROWN.jpg", "EP.BROWN3.jpg", "EP.BROWN4.jpg"],
+    category: "everyday-pouch",
+    note: "Corduroy",
+    liningColors: ["Brown"]
+  },
+  {
+    name: "CARMELA",
+    id: "everyday-pouch-carmela",
+    files: ["EP.CARMELA.jpg", "EP.CARMELA2.jpg", "EP.CARMELA3.jpg", "EP.CARMELA4.jpg"],
+    category: "everyday-pouch",
+    note: "White ditsy floral patchwork",
+    zipperColors: ["Cream"],
+    liningColors: ["Taro"]
+  },
+  {
+    name: "CELESTE",
+    id: "everyday-pouch-celeste",
+    files: ["EP.CELESTE.jpg", "EP.CELESTE2.jpg", "EP.CELESTE3.jpg", "EP.CELESTE4.jpg"],
+    category: "everyday-pouch",
+    note: "Blue ribbon",
+    zipperColors: ["White"],
+    liningColors: ["Baby Blue"]
+  },
+  {
+    name: "CHERRIE",
+    id: "everyday-pouch-cherrie",
+    files: ["EP.CHERRIE.jpg", "EP.CHERRIE2.jpg", "EP.CHERRIE3.jpg", "EP.CHERRIE4.jpg"],
+    category: "everyday-pouch",
+    note: "Big cherry on cream",
+    zipperColors: ["Red"],
+    liningColors: ["Red"]
+  },
+  {
+    name: "CLOVER",
+    id: "everyday-pouch-clover",
+    files: ["EP.CLOVER.jpg", "EP.CLOVER2.jpg", "EP.CLOVER3.jpg", "EP.CLOVER4.jpg"],
+    category: "everyday-pouch",
+    note: "Sage ditsy floral",
+    zipperColors: ["Cream"],
+    liningColors: ["Sage Green"]
+  },
+  {
+    name: "JASMINE",
+    id: "everyday-pouch-jasmine",
+    files: ["EP.JASMINE.jpg", "EP.JASMINE2.jpg", "EP.JASMINE3.jpg", "EP.JASMINE4.jpg"],
+    category: "everyday-pouch",
+    note: "Pink berry blossom patch",
+    zipperColors: ["Cream"],
+    liningColors: ["Taro"]
+  },
+  {
+    name: "LOTTIE",
+    id: "everyday-pouch-lottie",
+    files: ["EP.LOTTIE.jpg", "EP.LOTTIE2.jpg", "EP.LOTTIE3.jpg", "EP.LOTTIE4.jpg"],
+    category: "everyday-pouch",
+    note: "Ditsy floral stripe",
+    zipperColors: ["Cream"],
+    liningColors: ["Avocado"]
+  },
+  {
+    name: "LUNA",
+    id: "everyday-pouch-luna",
+    files: ["EP.LUNA.jpg", "EP.LUNA2.jpg", "EP.LUNA3.jpg", "EP.LUNA4.jpg"],
+    category: "everyday-pouch",
+    note: "Butter yellow strawberry",
+    zipperColors: ["Cream"],
+    liningColors: ["Avocado"]
+  },
+  {
+    name: "MARIGOLD",
+    id: "everyday-pouch-marigold",
+    files: ["EP.MARIGOLD.jpg", "EP.MARIGOLD2.jpg", "EP.MARIGOLD3.jpg", "EP.MARIGOLD4.jpg"],
+    category: "everyday-pouch",
+    note: "Yellow and pink daisy",
+    zipperColors: ["Cream"],
+    liningColors: ["Peach"]
+  },
+  {
+    name: "MARY",
+    id: "everyday-pouch-mary",
+    files: ["EP.MARY.jpg", "EP.MARY2.jpg", "EP.MARY3.jpg", "EP.MARY4.jpg"],
+    category: "everyday-pouch",
+    note: "Blush brown polka dot",
+    zipperColors: ["Brown"],
+    liningColors: ["Brown"]
+  },
+  {
+    name: "MELO",
+    id: "everyday-pouch-melo",
+    files: ["EP.MELO.jpg", "EP.MELO2.jpg", "EP.MELO3.jpg", "EP.MELO4.jpg"],
+    category: "everyday-pouch",
+    note: "Honey gingham",
+    zipperColors: ["Cream"],
+    liningColors: ["Canary Yellow"]
+  },
+  {
+    name: "MIA",
+    id: "everyday-pouch-mia",
+    files: ["EP.MIA.jpg", "EP.MIA2.jpg", "EP.MIA3.jpg", "EP.MIA4.jpg"],
+    category: "everyday-pouch",
+    note: "White mini cherry orange",
+    zipperColors: ["Brown"],
+    liningColors: ["Canary Yellow"]
+  },
+  {
+    name: "MINNIE",
+    id: "everyday-pouch-minnie",
+    files: ["EP.MINNIE.jpg", "EP.MINNIE2.jpg", "EP.MINNIE3.jpg", "EP.MINNIE4.jpg"],
+    category: "everyday-pouch",
+    note: "Beige cottage garden",
+    zipperColors: ["Brown"],
+    liningColors: ["Brown"]
+  },
+  {
+    name: "POLLY",
+    id: "everyday-pouch-polly",
+    files: ["EP.POLLY.jpg", "EP.POLLY2.jpg", "EP.POLLY3.jpg", "EP.POLLY4.jpg"],
+    category: "everyday-pouch",
+    note: "White small cherry",
+    zipperColors: ["Red"],
+    liningColors: ["Red"]
+  },
+  {
+    name: "ROSALIE",
+    id: "everyday-pouch-rosalie",
+    files: ["EP.ROSALIE.jpg", "EP.ROSALIE2.jpg", "EP.ROSALIE3.jpg", "EP.ROSALIE4.jpg"],
+    category: "everyday-pouch",
+    note: "Peach floral ribbon",
+    zipperColors: ["Cream"],
+    liningColors: ["Flamingo"]
+  },
+  {
+    name: "ROSE",
+    id: "everyday-pouch-rose",
+    files: ["EP.ROSE.jpg", "EP.ROSE2.jpg", "EP.ROSE3.jpg", "EP.ROSE4.jpg"],
+    category: "everyday-pouch",
+    note: "Soft rose white polka dot",
+    zipperColors: ["Cream"],
+    liningColors: ["Flamingo"]
+  },
+  {
+    name: "ROSIE",
+    id: "everyday-pouch-rosie",
+    files: ["EP.ROSIE.jpg", "EP.ROSIE2.jpg", "EP.ROSIE3.jpg", "EP.ROSIE4.jpg"],
+    category: "everyday-pouch",
+    note: "Pink strawberry blossom",
+    zipperColors: ["Red"],
+    liningColors: ["Red"]
+  },
+  {
     name: "WINNIE",
     files: ["WINNIE.png", "WINNIE2.png", "WINNIE3.png"],
     note: "Brown cottage garden",
@@ -257,12 +426,15 @@ const PRODUCTS = PRODUCT_PHOTO_SETS.map(({ name, files, ...options }) => ({
     ...files.map((file) => IMG + file),
     ...((options.category || "wallet") === "wallet" ? [IMG + "WRISTLETS.png"] : [])
   ],
-  note: options.note || "Handmade Mini wallet",
-  zipperColors: options.zipperColors || [...DEFAULT_ZIPPER_COLORS],
+  note: options.note || (options.category === "everyday-pouch" ? "Everyday pouch" : "Handmade Mini wallet"),
+  zipperColors: options.zipperColors || (options.category === "everyday-pouch" ? ["Cream"] : [...DEFAULT_ZIPPER_COLORS]),
   snapButtonColors: options.snapButtonColors || [],
   liningColors: options.liningColors || [...DEFAULT_LINING_COLORS],
   details: options.details || (options.category === "everyday-pouch"
-    ? ["Approx. 4.5 x 4 x 7 inches (Height x Width x Length)", "Cream nylon zipper tape with gold details", "Gold metal zipper pull"]
+    ? [
+        "Approx. 4.5 x 4 x 7 inches (Height x Width x Length)",
+        "Gold metal zipper pull"
+      ]
     : [DEFAULT_WALLET_SIZE])
 }));
 
@@ -308,9 +480,10 @@ function renderProducts() {
   const list = PRODUCTS.filter(
     (p) => activeFilter === "all" || p.category === activeFilter
   );
-  if (activeFilter === "all") {
+  if (activeFilter === "all" || activeFilter === "everyday-pouch") {
     const categoryOrder = { wallet: 0, "everyday-pouch": 1 };
     const walletEndOrder = { BROWN: 1, BLACK: 2 };
+    const everydayPouchEndOrder = { BROWN: 1, "BROWN ver2": 2 };
     list.sort((a, b) => {
       const categoryDifference = (categoryOrder[a.category] ?? 99) - (categoryOrder[b.category] ?? 99);
       if (categoryDifference) return categoryDifference;
@@ -318,6 +491,12 @@ function renderProducts() {
       if (a.category === "wallet") {
         const aEndOrder = walletEndOrder[a.name] || 0;
         const bEndOrder = walletEndOrder[b.name] || 0;
+        if (aEndOrder !== bEndOrder) return aEndOrder - bEndOrder;
+      }
+
+      if (a.category === "everyday-pouch") {
+        const aEndOrder = everydayPouchEndOrder[a.name] || 0;
+        const bEndOrder = everydayPouchEndOrder[b.name] || 0;
         if (aEndOrder !== bEndOrder) return aEndOrder - bEndOrder;
       }
 
@@ -359,9 +538,6 @@ function renderProducts() {
 
     const badges = [];
     if (p.soldOut) badges.push({ label: "Sold out", className: "sold-out-badge" });
-    if (p.category === "cable-holder") {
-      badges.push({ label: "Only 1 available" });
-    }
     if (badges.length) {
       const badgeGroup = document.createElement("div");
       badgeGroup.className = "card-badges";
@@ -484,18 +660,19 @@ function openProduct(id) {
     : p.details;
   $("#pmMeta").innerHTML = details.map((item) => `<li>${item}</li>`).join("");
   const isWallet = p.category === "wallet";
+  const isEverydayPouch = p.category === "everyday-pouch";
   const isCableHolder = p.category === "cable-holder";
-  const hasColorOptions = isWallet || p.category === "everyday-pouch" || isCableHolder;
+  const hasColorOptions = isWallet || isEverydayPouch || isCableHolder;
   $("#pmOptions").hidden = !hasColorOptions;
   $("#pmOptions").setAttribute("aria-label", isWallet
-    ? "Zipper, lining, and wristlet color options"
+    ? "Zipper, lining, and wristlet options"
     : isCableHolder
-      ? "Snap button and lining colors"
-      : "Lining color options");
+      ? "Snap button and lining options"
+      : "Zipper and lining options");
   renderColorSwatches("#pmZipperColors", p.zipperColors);
   renderColorSwatches("#pmSnapButtonColors", p.snapButtonColors);
   renderColorSwatches("#pmLiningColors", p.liningColors);
-  $("#pmZipperColors").closest(".color-group").hidden = !isWallet;
+  $("#pmZipperColors").closest(".color-group").hidden = !isWallet && !isEverydayPouch;
   $("#pmSnapButtonColors").closest(".color-group").hidden = !isCableHolder;
   $("#wristletColorsTitle").closest(".color-group").hidden = !isWallet;
   $("#pmNote").textContent = p.category === "cable-holder"
