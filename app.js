@@ -3,6 +3,11 @@ const IMG = "asset/";
 const DEFAULT_WALLET_SIZE = "Approx. 3.5 x 4.5 inches (Height x Width)";
 const DEFAULT_ZIPPER_COLORS = ["White", "Rice white", "Cream", "Beige", "Brown", "Pink", "Red"];
 const DEFAULT_LINING_COLORS = ["Brown", "Champagne", "Rust Orange", "Pink", "Sky blue", "Maroon", "Brown", "Dark Peach", "Red", "Light pink", "Pale Orange", "Avocado", "Maize Yellow", "Old Rose", "taro", "Blue Cotton Candy", "Baby Blue", "Aqua Blue", "Flamingo", "Canary Yellow", "Dark Sage Green", "Peach", "Red", "Orange", "Lilac", "Sage Green", "Rose Gold"];
+const PRODUCT_PRICES = {
+  wallet: "₱150",
+  "everyday-pouch": "₱285",
+  "cable-holder": "₱50"
+};
 
 const PRODUCT_PHOTO_SETS = [
   {
@@ -465,7 +470,6 @@ let activeFilter = "all";
 let activeFilterEmptyMessage = "";
 let activeFilterDescription = "";
 let activeFilterFeatures = [];
-let activeFilterPrice = "";
 let visibleProductCount = PRODUCTS_PER_PAGE;
 let activeProduct = null;
 let activeProductImages = [];
@@ -587,6 +591,10 @@ function renderProducts() {
     note.className = "card-note";
     note.textContent = p.note;
 
+    const price = document.createElement("p");
+    price.className = "card-price";
+    price.textContent = PRODUCT_PRICES[p.category];
+
     const accentNote = document.createElement("span");
     accentNote.className = "card-note-badge";
     accentNote.textContent = p.category === "cable-holder" ? "Contrasting fabric lining" : "";
@@ -605,6 +613,7 @@ function renderProducts() {
     foot.append(view);
     body.append(cat, title, note);
     if (p.category === "cable-holder") body.append(accentNote);
+    body.append(price);
     body.append(foot);
     card.append(media, body);
     return card;
@@ -627,19 +636,6 @@ function renderProducts() {
       features.append(item);
     });
     content.push(features);
-  }
-  if (activeFilterPrice) {
-    const price = document.createElement("div");
-    price.className = "filter-price";
-    price.setAttribute("aria-label", `${activeFilterPrice} each`);
-    const amount = document.createElement("span");
-    amount.className = "filter-price-amount";
-    amount.textContent = activeFilterPrice;
-    const unit = document.createElement("span");
-    unit.className = "filter-price-unit";
-    unit.textContent = "each";
-    price.append(amount, unit);
-    content.push(price);
   }
   content.push(...productCards);
 
@@ -808,7 +804,6 @@ $("#filters").addEventListener("click", (e) => {
   activeFilterEmptyMessage = chip.dataset.emptyMessage || "";
   activeFilterDescription = chip.dataset.description || "";
   activeFilterFeatures = chip.dataset.features ? chip.dataset.features.split("|") : [];
-  activeFilterPrice = chip.dataset.price || "";
   visibleProductCount = PRODUCTS_PER_PAGE;
   document.querySelectorAll(".chip").forEach((c) =>
     c.classList.toggle("is-active", c === chip)

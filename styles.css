@@ -339,32 +339,6 @@ section[id] { scroll-margin-top: 90px; }
   margin-right: .5rem;
   color: var(--sage);
 }
-.filter-price {
-  grid-column: 1 / -1;
-  display: inline-flex;
-  align-items: baseline;
-  justify-self: start;
-  gap: .4rem;
-  margin: -.65rem 0 .25rem;
-  padding: .5rem .95rem;
-  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--surface), var(--accent-soft));
-  color: var(--accent);
-  box-shadow: 0 5px 16px rgba(36, 72, 110, .1);
-}
-.filter-price-amount {
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -.03em;
-  line-height: 1;
-}
-.filter-price-unit {
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
 .empty-state {
   grid-column: 1 / -1;
   margin: 0;
@@ -481,6 +455,7 @@ section[id] { scroll-margin-top: 90px; }
 }
 .card-title { font-size: 1.02rem; font-weight: 700; margin: 0; }
 .card-note { font-size: .84rem; color: var(--muted); margin: 0; }
+.card-price { margin: 0; font-size: .9rem; font-weight: 700; color: var(--accent); }
 .card-note-badge {
   display: inline-block;
   width: fit-content;
