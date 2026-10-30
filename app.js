@@ -228,6 +228,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-brown-ver2",
     files: ["EP.1BROWN.jpg", "EP.1BROWN2.jpg", "EP.1BROWN3.jpg", "EP.1BROWN4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Corduroy",
     zipperColors: ["Cream"],
     liningColors: ["Yellow Gingham"]
@@ -237,6 +238,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-amber",
     files: ["EP.AMBER.jpg", "EP.AMBER2.jpg", "EP.AMBER3.jpg", "EP.AMBER4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Yellow and orange strawberry",
     liningColors: ["Orange"]
   },
@@ -245,6 +247,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-brown",
     files: ["EP.BROWN2.jpg", "EP.BROWN.jpg", "EP.BROWN3.jpg", "EP.BROWN4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Corduroy",
     liningColors: ["Brown"]
   },
@@ -253,6 +256,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-carmela",
     files: ["EP.CARMELA.jpg", "EP.CARMELA2.jpg", "EP.CARMELA3.jpg", "EP.CARMELA4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "White ditsy floral patchwork",
     zipperColors: ["Cream"],
     liningColors: ["Taro"]
@@ -262,6 +266,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-celeste",
     files: ["EP.CELESTE.jpg", "EP.CELESTE2.jpg", "EP.CELESTE3.jpg", "EP.CELESTE4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Blue ribbon",
     zipperColors: ["White"],
     liningColors: ["Baby Blue"]
@@ -271,6 +276,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-cherrie",
     files: ["EP.CHERRIE.jpg", "EP.CHERRIE2.jpg", "EP.CHERRIE3.jpg", "EP.CHERRIE4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Big cherry on cream",
     zipperColors: ["Red"],
     liningColors: ["Red"]
@@ -280,6 +286,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-clover",
     files: ["EP.CLOVER.jpg", "EP.CLOVER2.jpg", "EP.CLOVER3.jpg", "EP.CLOVER4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Sage ditsy floral",
     zipperColors: ["Cream"],
     liningColors: ["Sage Green"]
@@ -289,6 +296,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-jasmine",
     files: ["EP.JASMINE.jpg", "EP.JASMINE2.jpg", "EP.JASMINE3.jpg", "EP.JASMINE4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Pink berry blossom patch",
     zipperColors: ["Cream"],
     liningColors: ["Taro"]
@@ -298,6 +306,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-lottie",
     files: ["EP.LOTTIE.jpg", "EP.LOTTIE2.jpg", "EP.LOTTIE3.jpg", "EP.LOTTIE4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Ditsy floral stripe",
     zipperColors: ["Cream"],
     liningColors: ["Avocado"]
@@ -307,6 +316,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-luna",
     files: ["EP.LUNA.jpg", "EP.LUNA2.jpg", "EP.LUNA3.jpg", "EP.LUNA4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Butter yellow strawberry",
     zipperColors: ["Cream"],
     liningColors: ["Avocado"]
@@ -316,6 +326,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-marigold",
     files: ["EP.MARIGOLD.jpg", "EP.MARIGOLD2.jpg", "EP.MARIGOLD3.jpg", "EP.MARIGOLD4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Yellow and pink daisy",
     zipperColors: ["Cream"],
     liningColors: ["Peach"]
@@ -325,6 +336,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-mary",
     files: ["EP.MARY.jpg", "EP.MARY2.jpg", "EP.MARY3.jpg", "EP.MARY4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Blush brown polka dot",
     zipperColors: ["Brown"],
     liningColors: ["Brown"]
@@ -334,6 +346,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-melo",
     files: ["EP.MELO.jpg", "EP.MELO2.jpg", "EP.MELO3.jpg", "EP.MELO4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Honey gingham",
     zipperColors: ["Cream"],
     liningColors: ["Canary Yellow"]
@@ -343,6 +356,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-mia",
     files: ["EP.MIA.jpg", "EP.MIA2.jpg", "EP.MIA3.jpg", "EP.MIA4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "White mini cherry orange",
     zipperColors: ["Brown"],
     liningColors: ["Canary Yellow"]
@@ -352,6 +366,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-minnie",
     files: ["EP.MINNIE.jpg", "EP.MINNIE2.jpg", "EP.MINNIE3.jpg", "EP.MINNIE4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Beige cottage garden",
     zipperColors: ["Brown"],
     liningColors: ["Brown"]
@@ -361,6 +376,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-polly",
     files: ["EP.POLLY.jpg", "EP.POLLY2.jpg", "EP.POLLY3.jpg", "EP.POLLY4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "White small cherry",
     zipperColors: ["Red"],
     liningColors: ["Red"]
@@ -370,6 +386,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-rosalie",
     files: ["EP.ROSALIE.jpg", "EP.ROSALIE2.jpg", "EP.ROSALIE3.jpg", "EP.ROSALIE4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Peach floral ribbon",
     zipperColors: ["Cream"],
     liningColors: ["Flamingo"]
@@ -379,6 +396,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-rose",
     files: ["EP.ROSE.jpg", "EP.ROSE2.jpg", "EP.ROSE3.jpg", "EP.ROSE4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Soft rose white polka dot",
     zipperColors: ["Cream"],
     liningColors: ["Flamingo"]
@@ -388,6 +406,7 @@ const PRODUCT_PHOTO_SETS = [
     id: "everyday-pouch-rosie",
     files: ["EP.ROSIE.jpg", "EP.ROSIE2.jpg", "EP.ROSIE3.jpg", "EP.ROSIE4.jpg"],
     category: "everyday-pouch",
+    isNew: true,
     note: "Pink strawberry blossom",
     zipperColors: ["Red"],
     liningColors: ["Red"]
@@ -422,6 +441,7 @@ const PRODUCTS = PRODUCT_PHOTO_SETS.map(({ name, files, ...options }) => ({
   name,
   category: options.category || "wallet",
   image: options.image || IMG + files[0],
+  isNew: options.isNew || false,
   images: options.images || [
     ...files.map((file) => IMG + file),
     ...((options.category || "wallet") === "wallet" ? [IMG + "WRISTLETS.png"] : [])
@@ -478,9 +498,10 @@ function renderColorSwatches(listSelector, colors = []) {
 function renderProducts() {
   const grid = $("#productGrid");
   const list = PRODUCTS.filter(
-    (p) => activeFilter === "all" || p.category === activeFilter
+    (p) => activeFilter === "all"
+      || (activeFilter === "new" ? p.isNew : p.category === activeFilter)
   );
-  if (activeFilter === "all" || activeFilter === "everyday-pouch") {
+  if (activeFilter === "all" || activeFilter === "everyday-pouch" || activeFilter === "new") {
     const categoryOrder = { wallet: 0, "everyday-pouch": 1 };
     const walletEndOrder = { BROWN: 1, BLACK: 2 };
     const everydayPouchEndOrder = { BROWN: 1, "BROWN ver2": 2 };
@@ -537,6 +558,7 @@ function renderProducts() {
     media.append(img);
 
     const badges = [];
+    if (p.isNew) badges.push({ label: "New" });
     if (p.soldOut) badges.push({ label: "Sold out", className: "sold-out-badge" });
     if (badges.length) {
       const badgeGroup = document.createElement("div");
